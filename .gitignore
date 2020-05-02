@@ -231,3 +231,6 @@ dmypy.json
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+# ignore all .extension files
+*.ideas
