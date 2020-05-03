@@ -233,4 +233,4 @@ dmypy.json
 .history
 
 # ignore all .extension files
-*.ideas
+*.idea/*
