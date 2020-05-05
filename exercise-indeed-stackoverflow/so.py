@@ -21,8 +21,6 @@ def extract_job(html):
             'location' : location,
             'apply_link' : f"https://stackoverflow.com/{job_link}"}
 
-
-
 def extract_jobs(last_page):
     jobs = []
     for page in range(last_page):
@@ -34,7 +32,6 @@ def extract_jobs(last_page):
             job = extract_job(result)
             jobs.append(job)
     return jobs
-
 
 def get_jobs():
     last_page = get_last_page()

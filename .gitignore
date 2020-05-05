@@ -234,3 +234,14 @@ dmypy.json
 
 # ignore all .extension files
 *.idea/*
+*.__pycache__/*
+# ignore all documents
+# ignore all documents
+*.pptx
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.pdf
+*.csv
