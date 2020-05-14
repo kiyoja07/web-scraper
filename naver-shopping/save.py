@@ -27,15 +27,18 @@ def save_no_result_to_csv(j, search_options):
     if j == 0:
         file = open("./export_file/fail_search_keywords.csv", mode="w")
         writer = csv.writer(file)
-        writer.writerow(["fail_keyword"])
+        writer.writerow(["fail_keyword", "search_count"])
     else:
         file = open("./export_file/fail_search_keywords.csv", mode="a")
         writer = csv.writer(file)
 
     original_keyword = search_options.pop("original_keyword")
+    search_count = search_options.pop("search_count")
     print(original_keyword, "fail")
 
     result = []
-    result.append(original_keyword)
+    columns = [original_keyword, search_count]
+    for column in columns:
+        result.append(column)
     writer.writerow(result)
     return None

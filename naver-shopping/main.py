@@ -5,24 +5,27 @@ from read_keyword import get_keyword
 keywords = get_keyword()
 
 def run_main():
-    j = 0
-    for i, keyword in enumerate(keywords):
+    success_count = 0
+    fail_count = 0
+    for keyword in keywords:
         search_option = naver_search_option(keyword)
-        if len(search_option) > 1:
-            save_to_csv(i, search_option)
+        if len(search_option) > 2:
+            save_to_csv(success_count, search_option)
+            success_count =+ 1
         else:
-            save_no_result_to_csv(j, search_option)
-            j =+ 1
+            save_no_result_to_csv(fail_count, search_option)
+            fail_count =+ 1
     return None
 
 if __name__ == "__main__":
 
-    try:
-        run_main()
-    except Exception as e:
-        print(e)
-    else:
-        print('all process was completed')
+    run_main()
+    # try:
+    #     run_main()
+    # except Exception as e:
+    #     print(e)
+    # else:
+    #     print('all process was completed')
 
 
 
